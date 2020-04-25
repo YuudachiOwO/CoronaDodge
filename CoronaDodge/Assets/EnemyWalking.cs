@@ -27,7 +27,7 @@ public class EnemyWalking : MonoBehaviour
         if (durations.Length != 0)
         {
             durationTime = Time.time + durations[current];
-            myAnimator.SetFloat("Blend", CheckAnimationValue(new Vector3(directions[0].x, 0, directions[0].y)));
+            myAnimator.SetFloat("Blend", CheckAnimationValue(new Vector3(directions[0].x, directions[0].y, 0)));
             //print($"Time.time: {Time.time} | duration time: {durationTime}");
         }
         if (current > directions.Length)
@@ -43,6 +43,7 @@ public class EnemyWalking : MonoBehaviour
         {
             direction = new Vector3(directions[current].x, 0, directions[current].y);
             transform.position += direction.normalized * (velocities[current] / velocityManipulator);
+            transform.rotation = Quaternion.LookRotation(direction);
         }
         else
         {
