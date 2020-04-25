@@ -53,4 +53,16 @@ public class EnemyWalking : MonoBehaviour
 			durationTime = Time.time + durations[current];
 		}
 	}
+	private void OnValidate()
+	{
+		if (durations.Length != directions.Length)
+		{
+			durations = new float[directions.Length];
+		}
+		
+		if (velocities.Length != directions.Length)
+		{
+			velocities = new float[directions.Length];
+		}
+	}
 }
