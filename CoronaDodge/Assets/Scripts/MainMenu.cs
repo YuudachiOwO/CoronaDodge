@@ -11,4 +11,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu"); //LoadScene when button is clicked
     }
 
+    public void clickStart()
+    {
+        SceneManager.LoadScene("SampleScene"); //LoadScene when button is clicked
+    }
+
 }
