@@ -17,14 +17,18 @@ public class EnemyWalking : MonoBehaviour
 	private float durationTime;
 	private int current = 0;
 	private float timer = 0;
+	Animator myAnimator;
 
 	private Vector3 direction;
 
 	void Start()
 	{
+		myAnimator = transform.GetComponentInChildren<Animator>();
+
 		if (durations.Length != 0)
 		{
 			durationTime = Time.time + durations[current];
+			myAnimator.SetFloat("Blend", CheckAnimationValue(new Vector3(directions[0].x, directions[0].y, 0)));
 			//print($"Time.time: {Time.time} | duration time: {durationTime}");
 		}
 		if (current > directions.Length)
@@ -62,6 +66,7 @@ public class EnemyWalking : MonoBehaviour
 
 			timer = 0;
 			durationTime = currentTime + durations[current];
+			myAnimator.SetFloat("Blend", CheckAnimationValue(direction));
 		}
 	}
 
