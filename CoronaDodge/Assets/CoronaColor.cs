@@ -2,9 +2,11 @@
 
 public class CoronaColor : MonoBehaviour
 {
-	private Transform enemy;
+	[SerializeField] private Transform enemy;
 	private CapsuleCollider coronaCollider;
+	private SpriteRenderer circle;
 	private float distance;
+	[SerializeField] private float minCollisionDist = 1.5f;
 
 	[SerializeField] private Color baseColor = new Color(1, 1, 1, 1);
 	[SerializeField] private Color coronaColor = new Color(.75f, .25f, 0, 1);
@@ -15,6 +17,12 @@ public class CoronaColor : MonoBehaviour
 		coronaCollider = GetComponent<CapsuleCollider>();
 		if (!coronaCollider)
 			throw new MissingComponentException("Corona Color is missing a CapsuleCollider component");
+
+		circle = GetComponent<SpriteRenderer>();
+		if (!circle)
+			throw new MissingComponentException("Corona Color is missing a SpriteRenderer component");
+		circle.color = baseColor;
+
 		distance = coronaCollider.radius;
 	}
 
@@ -23,21 +31,25 @@ public class CoronaColor : MonoBehaviour
 	{
 		if (enemy != null)
 		{
-			distance = Vector3.Distance(transform.position, enemy.position);
+			
+			distance = Vector3.Distance(transform.position, enemy.position) - minCollisionDist;
 
-			percentage = coronaCollider.radius / distance;
+			percentage = distance / coronaCollider.radius;
+			print(percentage);
 		}
-		Color.Lerp(baseColor, coronaColor, percentage);
+		circle.color = Color.Lerp(coronaColor, baseColor, percentage);
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
-		enemy = other.transform;
+		if (other.tag == "Enemy")
+		{
+			enemy = other.transform;
+		}
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
 		enemy = null;
 	}
-
 }
