@@ -40,15 +40,17 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition((Vector3)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 
+	// this needs to be rewritten, condition to show UI is no longer a trigger
+	/*
     private void OnTriggerEnter(Collider col)
     {
         Respawn hit = col.gameObject.GetComponent<Respawn>();
         if (hit != null)
         {
             menuContainer.SetActive(true);
-
+   
         }
-    }
+    }*/
 
     private void Animate(Vector3 _moveInput)
     {

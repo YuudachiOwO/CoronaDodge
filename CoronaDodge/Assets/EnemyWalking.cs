@@ -16,6 +16,7 @@ public class EnemyWalking : MonoBehaviour
 	private float currentTime;
 	private float durationTime;
 	private int current = 0;
+	private float timer = 0;
 
 	private Vector3 direction;
 
@@ -28,6 +29,7 @@ public class EnemyWalking : MonoBehaviour
 		}
 		if (current > directions.Length)
 			Debug.LogError($"{current} is used to access the targets[] but is out of range!");
+		timer = 0;
 	}
 
 	void Update()
@@ -38,7 +40,14 @@ public class EnemyWalking : MonoBehaviour
 		if (currentTime < durationTime)
 		{
 			direction = new Vector3(directions[current].x, 0, directions[current].y);
-			transform.position += direction.normalized * (velocities[current] / velocityManipulator);
+			// outdated line:
+			//transform.position += direction.normalized * (velocities[current] / velocityManipulator);
+
+			var next = current < directions.Length - 1 ? current + 1 : 0;
+			// 0 to 1 within durations[current] seconds
+			timer += (1 / durations[current]) * Time.deltaTime; 
+			var velocityLerp = Mathf.Lerp(velocities[current], velocities[next], timer);
+			transform.position += direction.normalized * (velocityLerp / velocityManipulator);
 		}
 		else
 		{
@@ -50,16 +59,18 @@ public class EnemyWalking : MonoBehaviour
 			{
 				current = 0;
 			}
-			durationTime = Time.time + durations[current];
+
+			timer = 0;
+			durationTime = currentTime + durations[current];
 		}
 	}
 
-    private float CheckAnimationValue(Vector3 _NextPosition)
-    {
-        Vector3 NullVector = new Vector3(0, 0, 0);
-        float animationValue = _NextPosition.Equals(NullVector) ? 0 : 1;
-        return animationValue;
-    }
+	private float CheckAnimationValue(Vector3 _NextPosition)
+	{
+		Vector3 NullVector = new Vector3(0, 0, 0);
+		float animationValue = _NextPosition.Equals(NullVector) ? 0 : 1;
+		return animationValue;
+	}
 
 	private void OnValidate()
 	{
@@ -67,7 +78,7 @@ public class EnemyWalking : MonoBehaviour
 		{
 			durations = new float[directions.Length];
 		}
-		
+
 		if (velocities.Length != directions.Length)
 		{
 			velocities = new float[directions.Length];
