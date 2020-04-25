@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7519450720797954978}
   - component: {fileID: 1513616466601617812}
   - component: {fileID: 5061477823113549165}
+  - component: {fileID: 2548768459819851779}
   m_Layer: 0
   m_Name: Abfalleimer_low
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &2548768459819851779
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6773745135367840177}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.01
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 2.4323333e-13, y: -0.0013929042, z: 0.04}

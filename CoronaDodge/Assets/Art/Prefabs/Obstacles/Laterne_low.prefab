@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1445865991167611341}
   - component: {fileID: 7587362275721358331}
   - component: {fileID: 4212889444582807298}
+  - component: {fileID: 7979067960952829300}
   m_Layer: 0
   m_Name: Laterne_low
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &7979067960952829300
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2471322454263063518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0035
+  m_Height: 0.1
+  m_Direction: 2
+  m_Center: {x: -0.000000008847565, y: 6.9849215e-10, z: 0.048708968}
