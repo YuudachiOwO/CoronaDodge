@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8604249492714491743}
   - component: {fileID: 735047629122712937}
   - component: {fileID: 6417594868042942864}
+  - component: {fileID: 6020887498323984229}
   m_Layer: 0
   m_Name: Obst_Apfel
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &6020887498323984229
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4698158808575507788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.010334483
+  m_Height: 0.019466575
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.000000003725291, z: 0.010334483}

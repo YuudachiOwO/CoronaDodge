@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!136 &2909363832726710643
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711622027331262696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.01
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 2.4323333e-13, y: -0.0013929042, z: 0.04}
 --- !u!1 &7749055346470057585
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +25,7 @@ GameObject:
   - component: {fileID: 6760313231142978658}
   - component: {fileID: 2344813755724578388}
   - component: {fileID: 8338127482840564397}
+  - component: {fileID: 6903891383639677792}
   m_Layer: 0
   m_Name: LaterneMitAbfalleimer
   m_TagString: Untagged
@@ -80,6 +95,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &6903891383639677792
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749055346470057585}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0035
+  m_Height: 0.1
+  m_Direction: 2
+  m_Center: {x: -0.000000008847565, y: 6.9849215e-10, z: 0.048708968}
 --- !u!1001 &5314751572569307481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -164,6 +193,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 978dfd48e9b1af047a29c9461a4080c4, type: 3}
+--- !u!1 &1711622027331262696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6773745135367840177, guid: 978dfd48e9b1af047a29c9461a4080c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5314751572569307481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2421739174442216187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7519450720797954978, guid: 978dfd48e9b1af047a29c9461a4080c4,
