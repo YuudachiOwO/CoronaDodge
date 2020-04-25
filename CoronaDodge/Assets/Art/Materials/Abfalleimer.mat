@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BodenPlatte
+  m_Name: Abfalleimer
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 1bb0d768be6265d438baad5ebfb48205, type: 3}
+        m_Texture: {fileID: 2800000, guid: 56cd5876369fd72489e2df0d94ae8f34, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,19 +40,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0b131d0cbbaec1a4aad6441e94f22efa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6f00ae601ea6cc74b985c29e3c57f135, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 641f4c7a6cacb0640b882ac8100ee471, type: 3}
+        m_Texture: {fileID: 2800000, guid: cf59addfa3be9a7418731abaa130033d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 9deb9cf38131d524f8393e2e73fafa11, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0afc27efc15dc0d4980d0e54ee27ab1e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 4fd87f3e62853b645bc8abe32210b0a1, type: 3}
+        m_Texture: {fileID: 2800000, guid: e8e2f4ad69a812443975dd83f85fdddf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
