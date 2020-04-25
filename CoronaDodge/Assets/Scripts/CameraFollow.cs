@@ -5,10 +5,10 @@ public class CameraFollow : MonoBehaviour
 	[SerializeField] private Transform playerPos;
 
 	// cmaera clamping boarders
-	[SerializeField] private float xMin;
-	[SerializeField] private float xMax;
-	[SerializeField] private float zMin;
-	[SerializeField] private float zMax;
+	[SerializeField] private float xMin = -10f;
+	[SerializeField] private float xMax = 10f;
+	[SerializeField] private float zMin = -10f;
+	[SerializeField] private float zMax = 10f;
 
 	private Vector3 cameraOffset;
 
@@ -17,6 +17,11 @@ public class CameraFollow : MonoBehaviour
 
 	private void Start()
 	{
+		if (!playerPos)
+		{
+			playerPos = transform;
+			throw new MissingComponentException($"{transform.name} is missing a {typeof(Transform)} reference");
+		}
 		cameraOffset = transform.position - playerPos.position;
 	}
 
