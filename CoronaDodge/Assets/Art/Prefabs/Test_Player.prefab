@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  menuContainer: {fileID: 0}
 --- !u!114 &1874332870460021826
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5535018415292815302}
   - component: {fileID: 8963298998540539161}
   - component: {fileID: 6462345727201937895}
+  - component: {fileID: 4404855635765478101}
   - component: {fileID: 1033794698}
-  - component: {fileID: 1305929725683315716}
   m_Layer: 0
   m_Name: Test_Enemy
   m_TagString: Untagged
@@ -96,6 +96,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &4404855635765478101
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706248743483436405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.68
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1033794698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,16 +124,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   respawnPoint: {fileID: 0}
---- !u!65 &1305929725683315716
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4706248743483436405}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
