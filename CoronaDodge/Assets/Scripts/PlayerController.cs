@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveInput;
     private Vector3 moveVelocity;
     public GameObject menuContainer;
+    Animator myAnimator;
 
 
     void Start()
@@ -19,11 +20,21 @@ public class PlayerController : MonoBehaviour
         //Get Component rigidbody of the player
         //rb = GetComponent<Rigidbody>();
         rb = GetComponent<Rigidbody>();
+        myAnimator = transform.GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
         moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        if(moveInput.magnitude > 0)
+        {
+            myAnimator.SetFloat("Blend", 1);
+        }
+        else
+        {
+            myAnimator.SetFloat("Blend", 0);
+        }
+        transform.rotation = Quaternion.LookRotation(moveInput);
         moveVelocity = moveInput * moveSpeed;
     }
 
