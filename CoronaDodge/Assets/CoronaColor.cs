@@ -35,8 +35,8 @@ public class CoronaColor : MonoBehaviour
 			distance = Vector3.Distance(transform.position, enemy.position) - minCollisionDist;
 
 			percentage = distance / coronaCollider.radius;
-			print(percentage);
 		}
+
 		circle.color = Color.Lerp(coronaColor, baseColor, percentage);
 	}
 
