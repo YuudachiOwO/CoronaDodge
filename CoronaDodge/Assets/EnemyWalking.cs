@@ -53,6 +53,14 @@ public class EnemyWalking : MonoBehaviour
 			durationTime = Time.time + durations[current];
 		}
 	}
+
+    private float CheckAnimationValue(Vector3 _NextPosition)
+    {
+        Vector3 NullVector = new Vector3(0, 0, 0);
+        float animationValue = _NextPosition.Equals(NullVector) ? 0 : 1;
+        return animationValue;
+    }
+
 	private void OnValidate()
 	{
 		if (durations.Length != directions.Length)

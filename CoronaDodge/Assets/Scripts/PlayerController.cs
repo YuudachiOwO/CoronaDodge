@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveInput;
     private Vector3 moveVelocity;
     public GameObject menuContainer;
-    Animator myAnimator;
+    [SerializeField] Animator myAnimator;
 
 
     void Start()
@@ -26,15 +26,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-        if(moveInput.magnitude > 0)
-        {
-            myAnimator.SetFloat("Blend", 1);
-        }
-        else
-        {
-            myAnimator.SetFloat("Blend", 0);
-        }
-        transform.rotation = Quaternion.LookRotation(moveInput);
+        Animate(moveInput);
         moveVelocity = moveInput * moveSpeed;
     }
 
@@ -58,5 +50,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+    private void Animate(Vector3 _moveInput)
+    {
+        float normalizedValue = _moveInput.magnitude > 0 ? 1 : 0;
+        myAnimator.SetFloat("Blend", normalizedValue);
+        transform.rotation = Quaternion.LookRotation(_moveInput);
+    }
 }
