@@ -382,7 +382,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  menuContainer: {fileID: 0}
+  menuContainer: {fileID: 1659919011504104052, guid: 79c7bc64924e749499e590394e31a2bd,
+    type: 3}
 --- !u!54 &744449600
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -868,7 +869,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1582488321}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -1588,6 +1589,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1874332870460021827, guid: d34ed0adcc5e4174b9aa4e68cdfadc59,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1874332870460021848, guid: d34ed0adcc5e4174b9aa4e68cdfadc59,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1643,5 +1649,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1874332870460021853, guid: d34ed0adcc5e4174b9aa4e68cdfadc59,
+        type: 3}
+      propertyPath: menuContainer
+      value: 
+      objectReference: {fileID: 1659919011504104052, guid: 79c7bc64924e749499e590394e31a2bd,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d34ed0adcc5e4174b9aa4e68cdfadc59, type: 3}
