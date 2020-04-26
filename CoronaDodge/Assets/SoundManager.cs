@@ -70,6 +70,17 @@ public class SoundManager : MonoBehaviour
 
         }
     }
+
+    public void ToggleFootSteps(bool _isRunning)
+    {
+        if (!_isRunning && FootStepSound.isPlaying)
+        {
+            FootStepSound.Stop();
+        }else if(_isRunning && !FootStepSound.isPlaying)
+        {
+            FootStepSound.Play();
+        }
+    }
     private void PlayAudioOnFirstFreeAvailable(AudioSource[] myQueue, AudioClip myClip)
     {
         if (!myQueue[0].isPlaying)
