@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5894108759763591761}
   - component: {fileID: 1638122459716168095}
   m_Layer: 0
-  m_Name: BodenPlatte (10)
+  m_Name: BigPlatte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5327972476060702349}
   m_LocalRotation: {x: -0.50000006, y: -0.50000006, z: -0.49999994, w: 0.49999997}
-  m_LocalPosition: {x: 7.7999983, y: 0, z: -4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 2679768444749627671}
