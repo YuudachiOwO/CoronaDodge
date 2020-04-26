@@ -14,6 +14,7 @@ public class Healtbar : MonoBehaviour
     float timer = 0f;
     int pickupCounter = 0;
     Text pickUpCounterText;
+    Text EvaluationText;
     PlayerController player;
 
     #region Singleton
@@ -52,6 +53,8 @@ public class Healtbar : MonoBehaviour
         slider = GetComponent<Slider>();
 		fillPercent = 0;
         player = GameObject.Find("Test_Player").GetComponent<PlayerController>();
+        EvaluationText = GameObject.Find("EvaluationText").GetComponent<Text>();
+        EvaluationText.text = "";
 	}
 
 	void FixedUpdate()
@@ -68,7 +71,7 @@ public class Healtbar : MonoBehaviour
 
 		if(slider.value >= 1 && !menuContainer.activeSelf)
 		{
-            player.EndGame();
+            EvaluationText.text = player.EndGame();
 			menuContainer.SetActive(true);
 		}
 	}

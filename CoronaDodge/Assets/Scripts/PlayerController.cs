@@ -45,9 +45,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void EndGame()
+    public string EndGame()
     {
         isBlocked = true;
+        return "Congratz, you survived " + GetDistance().ToString() + "m!";
+    }
+
+    public int GetDistance()
+    {
+        Vector3 distance = transform.position - startPos;
+        return (int)distance.magnitude;
     }
 
     void moveChar(Vector3 direction)
