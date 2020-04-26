@@ -6,9 +6,11 @@ public class SoundManager : MonoBehaviour
 {
     [SerializeField] AudioClip[] coughingVariations = new AudioClip[3];
     [SerializeField] AudioClip[] WarningVariations = new AudioClip[2];
+    [SerializeField] AudioClip[] PickupVariations = new AudioClip[2];
 
     AudioSource[] WarningSound = new AudioSource[2];
     AudioSource[] CoughingSound = new AudioSource[2];
+    AudioSource[] PickupSound = new AudioSource[2];
     AudioSource FootStepSound;
 
     #region Singleton
@@ -39,7 +41,7 @@ public class SoundManager : MonoBehaviour
     }
     #endregion
 
-    public enum SOUNDCLIP { Coughing, Warning, Footsteps }
+    public enum SOUNDCLIP { Coughing, Warning, Footsteps, Pickup }
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +66,10 @@ public class SoundManager : MonoBehaviour
 
                 if (FootStepSound.isPlaying) FootStepSound.Stop();
                 else { FootStepSound.Play(); }
+                break;
+            case SOUNDCLIP.Pickup:
+                range = Random.Range(0, PickupVariations.Length - 1);
+                PlayAudioOnFirstFreeAvailable(PickupSound, PickupVariations[range]);
                 break;
             default:
                 break;
