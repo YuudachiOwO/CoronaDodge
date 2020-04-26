@@ -13,7 +13,7 @@ public class Pickup : MonoBehaviour
         {   
             Healtbar.Instance.DecreaseInfection(infectionDecreaser);
             SoundManager.Instance.PlayAudioClip(SoundManager.SOUNDCLIP.Pickup);
-            Destroy(this.gameObject);
+            Destroy(transform.gameObject);
         }
     }
 }
