@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     }
     public void clickStart()
     {
-        SceneManager.LoadScene("SampleScene"); //LoadScene when button is clicked
+        SceneManager.LoadScene("CoronaRandom"); //LoadScene when button is clicked
     }
     public void clickCredits()
     {
