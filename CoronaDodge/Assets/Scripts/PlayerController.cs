@@ -12,27 +12,42 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveInput;
     private Vector3 moveVelocity;
     [SerializeField] Animator myAnimator;
+    private Vector3 startPos;
 
+    private bool isBlocked = false;
 
     void Start()
     {
         //Get Component rigidbody of the player
         //rb = GetComponent<Rigidbody>();
+        startPos = transform.position;
         rb = GetComponent<Rigidbody>();
         myAnimator = transform.GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
-        moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
-        SoundManager.Instance.ToggleFootSteps(moveInput.magnitude > 0);
-        Animate(moveInput);
-        moveVelocity = moveInput * moveSpeed;
+        if (!isBlocked)
+        {
+
+            moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+            SoundManager.Instance.ToggleFootSteps(moveInput.magnitude > 0);
+            Animate(moveInput);
+            moveVelocity = moveInput * moveSpeed;
+        }
     }
 
     void FixedUpdate()
     {
-        rb.velocity = moveVelocity;
+        if (!isBlocked)
+        {
+            rb.velocity = moveVelocity;
+        }
+    }
+
+    public void EndGame()
+    {
+        isBlocked = true;
     }
 
     void moveChar(Vector3 direction)
@@ -40,8 +55,8 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition((Vector3)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 
-	// this needs to be rewritten, condition to show UI is no longer a trigger
-	/*
+    // this needs to be rewritten, condition to show UI is no longer a trigger
+    /*
     private void OnTriggerEnter(Collider col)
     {
         Respawn hit = col.gameObject.GetComponent<Respawn>();

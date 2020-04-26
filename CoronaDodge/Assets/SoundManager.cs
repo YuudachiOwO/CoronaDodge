@@ -116,5 +116,6 @@ public class SoundManager : MonoBehaviour
         WarningSound = transform.Find("WarningSound").GetComponents<AudioSource>();
         CoughingSound = transform.Find("CoughingSound").GetComponents<AudioSource>();
         FootStepSound = transform.Find("FootstepSound").GetComponent<AudioSource>();
+        PickupSound = transform.Find("PickupSound").GetComponents<AudioSource>();
     }
 }

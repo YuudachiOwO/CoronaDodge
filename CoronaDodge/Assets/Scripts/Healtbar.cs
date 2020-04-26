@@ -14,6 +14,7 @@ public class Healtbar : MonoBehaviour
     float timer = 0f;
     int pickupCounter = 0;
     Text pickUpCounterText;
+    PlayerController player;
 
     #region Singleton
     static Healtbar instance;
@@ -50,6 +51,7 @@ public class Healtbar : MonoBehaviour
         pickUpCounterText.text = "x " + pickupCounter.ToString();
         slider = GetComponent<Slider>();
 		fillPercent = 0;
+        player = GameObject.Find("Test_Player").GetComponent<PlayerController>();
 	}
 
 	void FixedUpdate()
@@ -64,8 +66,9 @@ public class Healtbar : MonoBehaviour
         SoundManager.Instance.SetCoughingVolume(fillPercent);
 		// this needs to be rewritten, condition to show UI is no longer a trigger
 
-		if(slider.value >= 1)
+		if(slider.value >= 1 && !menuContainer.activeSelf)
 		{
+            player.EndGame();
 			menuContainer.SetActive(true);
 		}
 	}
