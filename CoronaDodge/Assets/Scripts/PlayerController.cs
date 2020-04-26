@@ -45,10 +45,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public string EndGame()
+    public void EndGame()
     {
         isBlocked = true;
-        return "Congratz, you survived " + GetDistance().ToString() + "m!";
+        //return "Congratz, you survived " + GetDistance().ToString() + "m!";
     }
 
     public int GetDistance()
