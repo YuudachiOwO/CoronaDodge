@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+        SoundManager.Instance.ToggleFootSteps(moveInput.magnitude > 0);
         Animate(moveInput);
         moveVelocity = moveInput * moveSpeed;
     }
