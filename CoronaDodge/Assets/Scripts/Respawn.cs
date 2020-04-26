@@ -15,6 +15,6 @@ public class Respawn : MonoBehaviour
 
     public void click()
     {
-        SceneManager.LoadScene("SampleScene"); //LoadScene SampleScene when clicked on button
+        SceneManager.LoadScene("CoronaRandom"); //LoadScene SampleScene when clicked on button
     }
 }
