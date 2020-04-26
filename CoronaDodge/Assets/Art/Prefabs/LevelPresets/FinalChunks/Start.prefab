@@ -101,10 +101,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8681611306530444133}
     m_Modifications:
+    - target: {fileID: 224768091, guid: 4f37c2e877c3a9b44b53b7702aeb04bb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2333383015953694153, guid: 4f37c2e877c3a9b44b53b7702aeb04bb,
         type: 3}
       propertyPath: m_Name
       value: Start Leve_truel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870503547208221627, guid: 4f37c2e877c3a9b44b53b7702aeb04bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7657895170784728600, guid: 4f37c2e877c3a9b44b53b7702aeb04bb,
         type: 3}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1368915255422644025}
   m_Layer: 0
   m_Name: Walking Dead
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a50c7d9742d1c249b373c64f33d2b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lerpDirection: 0
+  lerpVelocity: 0
   directions:
   - {x: 1, y: 0}
   - {x: 0, y: 0}
