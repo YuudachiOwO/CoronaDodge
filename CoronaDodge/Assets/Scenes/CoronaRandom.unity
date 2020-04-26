@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1588808038}
   startLevel: {fileID: 566882117}
-  queueLength: 2
+  queueLength: 1
   threashHold: 0.5
 --- !u!4 &377691975
 Transform:
