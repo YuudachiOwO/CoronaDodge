@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5535018415292815302}
   - component: {fileID: 6462345727201937895}
   - component: {fileID: 1033794698}
-  - component: {fileID: -6743217418478720630}
   m_Layer: 0
   m_Name: Enemy01
   m_TagString: Enemy
@@ -69,24 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ab46935124b154f8829548d79ea6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-6743217418478720630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4706248743483436405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a50c7d9742d1c249b373c64f33d2b2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpDirection: 0
-  lerpVelocity: 0
-  directions: []
-  durations: []
-  velocities: []
-  velocityManipulator: 100
 --- !u!1001 &5520103994187987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,7 +79,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 87a5c2f243220d34f866d67ea0976512, type: 2}
+      objectReference: {fileID: 9100000, guid: c4f94be17533dcb4bb0e77620f2c69c0, type: 2}
     - target: {fileID: -4216859302048453862, guid: 6d5df245692002544a13d0e6ebbafc33,
         type: 3}
       propertyPath: m_LocalPosition.x
