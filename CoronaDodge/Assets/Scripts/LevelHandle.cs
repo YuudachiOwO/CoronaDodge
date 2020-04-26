@@ -7,4 +7,5 @@ namespace AsserTOOLres {
 		public GameObject[] nextLevels;
 		public float levelLength;
 	}
+
 }
