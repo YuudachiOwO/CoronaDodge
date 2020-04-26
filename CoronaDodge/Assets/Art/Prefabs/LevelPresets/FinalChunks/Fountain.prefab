@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3265140865909773199}
   - component: {fileID: 3265140865909773192}
   m_Layer: 0
-  m_Name: ChunkFountain
+  m_Name: Fountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b7939c4b3536b45aabdb8368817e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevels: []
+  nextLevels:
+  - {fileID: 3265140865909773193}
+  - {fileID: 6477031656691889867, guid: 84a73f0f0149f884c97499fc09f2cb3f, type: 3}
   levelLength: 48
 --- !u!1001 &7880945603046410529
 PrefabInstance:
