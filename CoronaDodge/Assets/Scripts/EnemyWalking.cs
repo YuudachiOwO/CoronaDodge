@@ -111,7 +111,10 @@ public class EnemyWalking : MonoBehaviour
 				current = 0;
 			}
 
-			walkDuration = Time.time + durations[current];
+			if (directions.Length != 0)
+			{
+				walkDuration = Time.time + durations[current];
+			}
 
 			myAnimator.SetFloat("Blend", CheckAnimationValue(walkDirection));
 		}
