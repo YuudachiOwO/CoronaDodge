@@ -47,6 +47,8 @@ MonoBehaviour:
   nextLevels:
   - {fileID: 3265140865909773193}
   - {fileID: 6477031656691889867, guid: 84a73f0f0149f884c97499fc09f2cb3f, type: 3}
+  - {fileID: 3265140865909773193, guid: b50112d1897b9d94686ad2b83a323463, type: 3}
+  - {fileID: 3265140865909773193, guid: aa6a07f7dacf46349b979a8318282f6d, type: 3}
   levelLength: 48
 --- !u!1001 &7880945603046410529
 PrefabInstance:
