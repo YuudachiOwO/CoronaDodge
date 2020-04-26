@@ -244,6 +244,11 @@ PrefabInstance:
       propertyPath: directions.Array.data[2].y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8206408921502604890, guid: bd27a335912990f4593f4591a0ee4eb6,
+        type: 3}
+      propertyPath: directions.Array.data[1].y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2662626975205761636, guid: bd27a335912990f4593f4591a0ee4eb6,
         type: 3}
       propertyPath: m_LocalPosition.x

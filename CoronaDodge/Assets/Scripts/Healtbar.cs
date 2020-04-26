@@ -12,6 +12,10 @@ public class Healtbar : MonoBehaviour
     [SerializeField] float[] timeValues = new float[2];
 	[SerializeField] private float fillPercent = 0f;
     float timer = 0f;
+    int pickupCounter = 0;
+    Text pickUpCounterText;
+    Text EvaluationText;
+    PlayerController player;
 
     #region Singleton
     static Healtbar instance;
@@ -43,8 +47,14 @@ public class Healtbar : MonoBehaviour
 
     void Start()
 	{
-		slider = GetComponent<Slider>();
+        pickUpCounterText = GameObject.Find("PickupCounter").GetComponent<Text>();
+        pickupCounter = 0;
+        pickUpCounterText.text = "x " + pickupCounter.ToString();
+        slider = GetComponent<Slider>();
 		fillPercent = 0;
+        player = GameObject.Find("Test_Player").GetComponent<PlayerController>();
+        EvaluationText = GameObject.Find("EvaluationText").GetComponent<Text>();
+        EvaluationText.text = "";
 	}
 
 	void FixedUpdate()
@@ -59,8 +69,9 @@ public class Healtbar : MonoBehaviour
         SoundManager.Instance.SetCoughingVolume(fillPercent);
 		// this needs to be rewritten, condition to show UI is no longer a trigger
 
-		if(slider.value >= 1)
+		if(slider.value >= 1 && !menuContainer.activeSelf)
 		{
+            EvaluationText.text = player.EndGame();
 			menuContainer.SetActive(true);
 		}
 	}
@@ -68,6 +79,9 @@ public class Healtbar : MonoBehaviour
     public void DecreaseInfection(float _value)
     {
         fillPercent -= _value;
+        pickupCounter++;
+        pickUpCounterText.text = "x " + pickupCounter.ToString();
+
     }
 
     private void ResetTimer()
