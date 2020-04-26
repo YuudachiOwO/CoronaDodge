@@ -71,7 +71,7 @@ public class Healtbar : MonoBehaviour
 
 		if(slider.value >= 1 && !menuContainer.activeSelf)
 		{
-            player.EndGame();
+            EvaluationText.text = player.EndGame();
 			menuContainer.SetActive(true);
 		}
 	}
