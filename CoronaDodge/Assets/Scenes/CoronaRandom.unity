@@ -436,6 +436,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1776731263, guid: d34ed0adcc5e4174b9aa4e68cdfadc59, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1776731264, guid: d34ed0adcc5e4174b9aa4e68cdfadc59, type: 3}
       propertyPath: healtbar
       value: 
@@ -824,7 +828,7 @@ PrefabInstance:
     - target: {fileID: 3113162990927376635, guid: e34edae952b562b43ac4a53edb68abe1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 3113162990927376635, guid: e34edae952b562b43ac4a53edb68abe1,
         type: 3}
@@ -834,7 +838,7 @@ PrefabInstance:
     - target: {fileID: 3113162990927376635, guid: e34edae952b562b43ac4a53edb68abe1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3113162990927376635, guid: e34edae952b562b43ac4a53edb68abe1,
         type: 3}
