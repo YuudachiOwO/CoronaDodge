@@ -69,7 +69,7 @@ public class CoronaColor : MonoBehaviour
 		if (other.tag == "Enemy")
 		{
 			enemyCounter++;
-
+            SoundManager.Instance.PlayAudioClip(SoundManager.SOUNDCLIP.Warning);
 			var temp = enemies;
 			enemies = new Transform[enemyCounter];
 			for (int i = 0; i < temp.Length; i++)

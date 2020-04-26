@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] AudioClip[] couchingVariations = new AudioClip[3];
+    [SerializeField] AudioClip[] coughingVariations = new AudioClip[3];
     [SerializeField] AudioClip[] WarningVariations = new AudioClip[2];
 
-    AudioSource WarningSound;
-    AudioSource[] CoughingSound;
+    AudioSource[] WarningSound = new AudioSource[2];
+    AudioSource[] CoughingSound = new AudioSource[2];
     AudioSource FootStepSound;
 
     #region Singleton
@@ -53,13 +53,12 @@ public class SoundManager : MonoBehaviour
         switch (_SoundArea)
         {
             case SOUNDCLIP.Coughing:
-                range = Random.Range(0, couchingVariations.Length);
-                PlayAudioOnFirstFreeAvailable(CoughingSound, couchingVariations[range]);
+                range = Random.Range(0, coughingVariations.Length - 1);
+                PlayAudioOnFirstFreeAvailable(CoughingSound, coughingVariations[range]);
                 break;
             case SOUNDCLIP.Warning:
-                range = Random.Range(0, WarningVariations.Length);
-                WarningSound.clip = WarningVariations[range];
-                WarningSound.Play();
+                range = Random.Range(0, WarningVariations.Length - 1);
+                PlayAudioOnFirstFreeAvailable(WarningSound, WarningVariations[range]);
                 break;
             case SOUNDCLIP.Footsteps:
 
@@ -75,24 +74,30 @@ public class SoundManager : MonoBehaviour
     {
         if (!myQueue[0].isPlaying)
         {
-            if (myQueue[0].clip != myQueue[0].clip) myQueue[0].clip = myClip;
+            if (myClip != myQueue[0].clip) myQueue[0].clip = myClip;
             myQueue[0].Play();
         }
-        else if (myQueue[0].isPlaying && !myQueue[1].isPlaying)
-        {
-            if (myQueue[1].clip != myQueue[1].clip) myQueue[1].clip = myClip;
-            myQueue[1].Play();
-        }
+        //else if (myQueue[0].isPlaying && !myQueue[1].isPlaying)
+        //{
+        //    if (myClip != myQueue[1].clip) myQueue[1].clip = myClip;
+        //    myQueue[1].Play();
+        //}
         else
         {
             Debug.Log(myClip.name + " could not been played on this Object: " + this.gameObject.name);
         }
     }
 
+    public void SetCoughingVolume(float _value)
+    {
+        
+        CoughingSound[0].volume = _value >= 1? 1: _value;
+    }
+
     private void InitializeArrays()
     {
-        WarningSound = transform.Find("WarningSound").GetComponent<AudioSource>();
+        WarningSound = transform.Find("WarningSound").GetComponents<AudioSource>();
         CoughingSound = transform.Find("CoughingSound").GetComponents<AudioSource>();
-        FootStepSound = transform.Find("FootStepSound").GetComponent<AudioSource>();
+        FootStepSound = transform.Find("FootstepSound").GetComponent<AudioSource>();
     }
 }
