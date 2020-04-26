@@ -90,9 +90,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevels:
-  - {fileID: 8681611306530444131}
   - {fileID: 6477031656691889867, guid: 84a73f0f0149f884c97499fc09f2cb3f, type: 3}
   - {fileID: 3265140865909773193, guid: a466e5cc99733a649b3bcf65eec3bae4, type: 3}
+  - {fileID: 3265140865909773193, guid: b50112d1897b9d94686ad2b83a323463, type: 3}
   levelLength: 48
 --- !u!1001 &3606607915486171080
 PrefabInstance:
@@ -101,10 +101,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8681611306530444133}
     m_Modifications:
+    - target: {fileID: 224768091, guid: 4f37c2e877c3a9b44b53b7702aeb04bb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2333383015953694153, guid: 4f37c2e877c3a9b44b53b7702aeb04bb,
         type: 3}
       propertyPath: m_Name
       value: Start Leve_truel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870503547208221627, guid: 4f37c2e877c3a9b44b53b7702aeb04bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7657895170784728600, guid: 4f37c2e877c3a9b44b53b7702aeb04bb,
         type: 3}
