@@ -13,7 +13,35 @@ public class Healtbar : MonoBehaviour
 	[SerializeField] private float fillPercent = 0f;
     float timer = 0f;
 
-	void Start()
+    #region Singleton
+    static Healtbar instance;
+    public static Healtbar Instance
+    {
+        get
+        {
+            if (!instance)
+            {
+                Debug.LogError("[SCENECONTROLLER]: i'm the instance, i do not exist.");
+            }
+
+            return instance;
+        }
+    }
+    private void Awake()
+    {
+        if (instance && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+    #endregion
+
+    void Start()
 	{
 		slider = GetComponent<Slider>();
 		fillPercent = 0;
@@ -36,6 +64,11 @@ public class Healtbar : MonoBehaviour
 			menuContainer.SetActive(true);
 		}
 	}
+
+    public void DecreaseInfection(float _value)
+    {
+        fillPercent -= _value;
+    }
 
     private void ResetTimer()
     {
