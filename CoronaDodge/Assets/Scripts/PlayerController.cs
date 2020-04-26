@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 moveInput;
     private Vector3 moveVelocity;
-    public GameObject menuContainer;
     [SerializeField] Animator myAnimator;
 
 
