@@ -34,7 +34,7 @@ public class EnemyWalking : MonoBehaviour
 		if (durations.Length != 0)
 		{
 			walkDuration = Time.time + durations[current];
-			myAnimator.SetFloat("Blend", CheckAnimationValue(new Vector3(directions[0].x, directions[0].y, 0)));
+			myAnimator.SetFloat("Blend", CheckAnimationValue(new Vector3(directions[0].x, 0, directions[0].y)));
 			//print($"Time.time: {Time.time} | duration time: {durationTime}");
 		}
 		if (current > directions.Length)

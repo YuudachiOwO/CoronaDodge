@@ -2,12 +2,14 @@
 
 public class CoronaColor : MonoBehaviour
 {
+	[SerializeField] Healtbar healtbar;
 	//private Transform enemy;
 	private CapsuleCollider coronaCollider;
 	private SpriteRenderer circle;
 	private float distance;
 
-	[SerializeField] private float minCollisionDist = 1.5f;
+	[SerializeField] [Range(0.01f, 1f)] private float infectionStrength = 0.1f;
+	[SerializeField] private float minCollisionDist = 1.35f;
 
 	[SerializeField] private Color baseColor = new Color(1, 1, 1, 1);
 	[SerializeField] private Color coronaColor = new Color(.75f, .25f, 0, 1);
@@ -40,21 +42,26 @@ public class CoronaColor : MonoBehaviour
 			shortestDist = coronaCollider.radius;
 			foreach (var enemy in enemies)
 			{
-				float enemyDistance = (Vector3.Distance(enemy.position, transform.position) - minCollisionDist);
+				float enemyDistance = (Vector3.Distance(enemy.position, transform.position));
 				if (enemyDistance < shortestDist)
 				{
 					shortestDist = enemyDistance;
-					distance = shortestDist;
 				}
 			}
-			print(shortestDist);
-			percentage = distance / (coronaCollider.radius - minCollisionDist);
+			distance = shortestDist;
+
+			Mathf.Clamp01(percentage = 1 - (distance - minCollisionDist) / (coronaCollider.radius));
 		}
 		else
 		{
-			percentage = 1;
+			percentage = 0;
 		}
-		circle.color = Color.Lerp(coronaColor, baseColor, percentage);
+		circle.color = Color.Lerp(baseColor, coronaColor, percentage);
+
+		if (distance < coronaCollider.radius)
+		{
+			healtbar.Infection(percentage * infectionStrength);
+		}
 	}
 
 	private void OnTriggerEnter(Collider other)
