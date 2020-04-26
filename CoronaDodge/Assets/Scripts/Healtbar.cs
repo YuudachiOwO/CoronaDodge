@@ -9,15 +9,19 @@ public class Healtbar : MonoBehaviour
     public Image fill;
     private Slider slider;
 
-    // Start is called before the first frame update
+	[SerializeField] private float fillPercent = 0f;
+
     void Start()
     {
         slider = GetComponent<Slider>();
+
+		fillPercent = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+		slider.value = fillPercent;
+
         /*if (slider.value <= slider.minvalue)
         {
             fill.enabled = false;
@@ -30,7 +34,11 @@ public class Healtbar : MonoBehaviour
 
         float fillvalue = pHealth.currenthealth / pHealth.maxhealth;
 
-
         slider.value = fillvalue;*/
     }
+
+	public void Infection(float f)
+	{
+		Mathf.Clamp01(fillPercent += f);		
+	}
 }
